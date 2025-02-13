@@ -20,11 +20,6 @@ nav {
     max-resolution: 0; /* makes sure any default margin from the broswer is removed*/
 }
 
-.navlinks a {
-    text-decoration: none; /* removes underline from links */
-    color: inherit; /* makes the link color match the text */
-}
-
 .navlinks a:hover {
     text-decoration: underline;
 }
@@ -32,6 +27,16 @@ nav {
 #navlogo, .navlinks a {
     color: white;
 }
+
+#navlogo a {
+    color: white; /* Sets the text color to white */
+    text-decoration: none; /* Removes the underline */
+}
+
+#navlogo a:hover {
+    text-decoration: none; /* Ensures no underline on hover */
+}
+
 
 .about {
     display: flex;
@@ -52,6 +57,21 @@ h2 {
     margin: 20px 0;
     width: 1000px;
 }
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100vw); /* Start from the right */
+    }
+    to {
+        transform: translateX(0); /* End at the original position */
+    }
+}
+
+.biopic {
+    animation: slideInFromRight 1s ease-out forwards; /* Apply the animation */
+    position: relative; /* Ensure the element can be moved */
+   
+}
+
 
 .skills {
     text-align: center;
@@ -61,6 +81,27 @@ h2 {
     gap: 50px;
     margin-bottom: 20px;
 }
+
+@keyframes wave {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.image-row {
+    display: flex;
+    justify-content: center; /* Center the images horizontally */
+    align-items: center; /* Center the images vertically if needed */
+}
+
+.wave-image {
+    animation: wave 1s ease-in-out 3; /* Run the animation 3 times */
+    animation-delay: calc(var(--i) * 0.2s);
+}
+
 
 .codeprojects {
     list-style: none;
@@ -98,5 +139,52 @@ h2 {
     width: 100%; /* Ensures images fill their grid cell */
     height: 200px; /* Sets a fixed height for all images */
     object-fit: cover; /* Ensures images cover the area while maintaining aspect ratio */
+  }
+
+  .contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: blueviolet;
+    padding: 20px 20px;
+  }
+
+  .form-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: white;
+  }
+
+  label {
+    min-width: 400px;
+    margin: 0;
+  }
+
+  input[type="email"],
+textarea {
+    width: 300px;
+    align-items: center;
+}
+
+
+  button {
+    align-self: flex-start;
+  }
+
+  button:hover {
+    box-shadow: inset;
+  }
+
+  .socials {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
   }
   
