@@ -95,6 +95,7 @@ h2 {
     display: flex;
     justify-content: center; /* Center the images horizontally */
     align-items: center; /* Center the images vertically if needed */
+    gap: 50px;
 }
 
 .wave-image {
